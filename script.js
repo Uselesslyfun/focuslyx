@@ -1,4 +1,6 @@
 let time = 0;
+let running = true;
+let interval;
 
 function updateDisplay() {
     let minutes = Math.floor(time / 60);
@@ -9,12 +11,21 @@ function updateDisplay() {
 }
 
 function startStopwatch() {
-    updateDisplay(); // sets 00:00 instantly
+    updateDisplay();
 
-    setInterval(() => {
-        time++;
-        updateDisplay();
+    interval = setInterval(() => {
+        if (running) {
+            time++;
+            updateDisplay();
+        }
     }, 1000);
+}
+
+function togglePause() {
+    running = !running;
+
+    let btn = document.getElementById("pauseBtn");
+    btn.innerText = running ? "Pause" : "Resume";
 }
 
 window.onload = startStopwatch;
