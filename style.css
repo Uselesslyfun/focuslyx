@@ -4,9 +4,6 @@ body {
     background: radial-gradient(circle at top, #1E293B, #020617);
     color: #E5E7EB;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Navbar */
@@ -29,17 +26,46 @@ body {
 /* Subtitle */
 .subtitle {
     color: #94A3B8;
-    font-size: 0.9rem;
-    margin-bottom: 30px;
+    font-size: 0.75rem;
 }
 
 /* Timer */
 .timer {
-    font-size: 5rem;
+    font-size: 2.2rem;
     font-weight: bold;
     color: #A5B4FC;
     text-shadow: 
-        0 0 10px rgba(99, 102, 241, 0.7),
-        0 0 20px rgba(99, 102, 241, 0.5),
-        0 0 40px rgba(99, 102, 241, 0.3);
+        0 0 6px rgba(99, 102, 241, 0.6),
+        0 0 12px rgba(99, 102, 241, 0.4);
+}
+.controls {
+    margin-top: 30px;
+}
+
+button {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    background: #6366F1;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4F46E5;
+}
+/* Top-right layout */
+.top-right {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    text-align: right;
+}
+.timer {
+    margin: 10px 0;
+}
+
+.controls {
+    margin-top: 10px;
 }
