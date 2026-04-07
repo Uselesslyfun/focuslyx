@@ -1,31 +1,47 @@
-let time = 0;
-let running = true;
-let interval;
+window.onload = function () {
 
-function updateDisplay() {
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
+    // TIMER ----------------
+    let time = 0;
+    let running = true;
 
-    document.getElementById("timer").innerText =
-        `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-}
+    function updateDisplay() {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
 
-function startStopwatch() {
-    updateDisplay();
+        document.getElementById("timer").innerText =
+            `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    }
 
-    interval = setInterval(() => {
+    setInterval(() => {
         if (running) {
             time++;
             updateDisplay();
         }
     }, 1000);
-}
 
-function togglePause() {
-    running = !running;
+    window.togglePause = function () {
+        running = !running;
+        document.getElementById("pauseBtn").innerText =
+            running ? "Pause" : "Resume";
+    };
 
-    let btn = document.getElementById("pauseBtn");
-    btn.innerText = running ? "Pause" : "Resume";
-}
+    // NOTES ----------------
+    const input = document.getElementById("noteInput");
+    const container = document.getElementById("notesContainer");
 
-window.onload = startStopwatch;
+    input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            const text = input.value.trim();
+
+            if (text !== "") {
+                const note = document.createElement("div");
+                note.className = "note";
+                note.innerText = text;
+
+                container.prepend(note);
+
+                input.value = "";
+            }
+        }
+    });
+};
