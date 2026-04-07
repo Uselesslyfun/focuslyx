@@ -9,23 +9,29 @@
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Logo -->
     <div class="navbar">
         <img src="logo.JPG" class="logo-img">
     </div>
 
-    <!-- Main Content -->
+    <!-- Timer -->
     <div class="top-right">
-    <p class="subtitle">Focus session in progress</p>
+        <p class="subtitle">Focus session in progress</p>
 
-    <div class="timer" id="timer">
-        00:00
+        <div class="timer" id="timer">00:00</div>
+
+        <div class="controls">
+            <button onclick="togglePause()" id="pauseBtn">Pause</button>
+        </div>
     </div>
 
-    <div class="controls">
-        <button onclick="togglePause()" id="pauseBtn">Pause</button>
+    <!-- Input (bottom right) -->
+    <div class="input-box">
+        <input type="text" id="noteInput" placeholder="Type and press Enter..." />
     </div>
-</div>
+
+    <!-- Notes (bottom left) -->
+    <div id="notesContainer"></div>
 
     <script src="script.js"></script>
 </body>
