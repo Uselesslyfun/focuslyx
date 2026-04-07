@@ -252,3 +252,147 @@ body::before,
 body::after {
     pointer-events: none;
 }
+
+.shooting-stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Individual star */
+.star {
+    position: absolute;
+    width: 1.5px;
+    height: 70px;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.7),
+        rgba(255,255,255,0)
+    );
+
+    opacity: 0.6;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.5));
+
+    transform: rotate(135deg);
+    animation: shoot 4s linear infinite;
+}
+
+/* Positioned more toward middle */
+.star:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    top: 40%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.star:nth-child(3) {
+    top: 60%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+@keyframes shoot {
+    0% {
+        transform: translate(0, 0) rotate(135deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(600px, 600px) rotate(135deg);
+        opacity: 0;
+    }
+}
+.cursor-glow {
+    position: fixed;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(99,102,241,0.35), transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999; /* VERY IMPORTANT */
+    filter: blur(20px);
+}
+
+/* Galaxy swirl */
+/* Galaxy core */
+/* Galaxy core (FINAL TUNED) */
+.galaxy {
+    position: absolute;
+
+    bottom: 200px;/*moved up*/
+    right: -20px;
+
+    width: 520px;   /* wider */
+    height: 220px;  /* thinner → more oval */
+
+    border-radius: 50% / 30%;  /* 🔥 flatter oval */
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255,255,255,0.95) 0%,
+        rgba(220,220,255,0.7) 10%,
+        rgba(168,85,247,0.45) 30%,
+        rgba(99,102,241,0.25) 55%,
+        rgba(59,130,246,0.12) 70%,
+        transparent 85%
+    );
+
+    filter: blur(35px);
+    opacity: 0.75;
+
+    animation: galaxyRotate 100s linear infinite;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes galaxyRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.galaxy::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background: radial-gradient(circle,
+        rgba(255,255,255,0.15),
+        transparent 60%
+    );
+
+    border-radius: 50%;
+    filter: blur(40px);
+}
+.galaxy::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50% / 30%;
+
+    background: radial-gradient(
+        ellipse,
+        rgba(168,85,247,0.3),
+        transparent 70%
+    );
+
+    filter: blur(70px);
+}
