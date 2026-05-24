@@ -1,3 +1,7 @@
+/* =========================
+   GLOBAL
+========================= */
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -11,10 +15,14 @@ body {
         radial-gradient(circle at center, #020617 0%, #000000 100%);
 }
 
-/* STAR FIELD */
+/* =========================
+   STAR FIELD
+========================= */
+
 body::before {
     content: "";
     position: absolute;
+
     width: 200%;
     height: 200%;
 
@@ -31,19 +39,24 @@ body::before {
 }
 
 @keyframes moveStars {
+
     from {
-        transform: translate(0, 0);
+        transform: translate(0,0);
     }
+
     to {
-        transform: translate(-500px, -500px);
+        transform: translate(-500px,-500px);
     }
 }
 
 /* SPACE GLOW */
+
 body::after {
+
     content: "";
 
     position: absolute;
+
     width: 100%;
     height: 100%;
 
@@ -63,7 +76,10 @@ body::after {
     z-index: -1;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
     position: absolute;
     top: 20px;
@@ -75,7 +91,10 @@ body::after {
     width: 120px;
 }
 
-/* TIMER */
+/* =========================
+   TIMER
+========================= */
+
 .top-right {
     position: absolute;
     top: 15px;
@@ -90,8 +109,10 @@ body::after {
 }
 
 .timer {
+
     font-size: 2.2rem;
     font-weight: bold;
+
     color: #A5B4FC;
 
     margin: 10px 0;
@@ -99,6 +120,29 @@ body::after {
     text-shadow:
         0 0 8px rgba(99,102,241,0.7),
         0 0 20px rgba(99,102,241,0.5);
+
+    animation: timerPulse 4s ease-in-out infinite;
+}
+
+@keyframes timerPulse {
+
+    0% {
+        text-shadow:
+            0 0 8px rgba(99,102,241,0.6),
+            0 0 20px rgba(99,102,241,0.4);
+    }
+
+    50% {
+        text-shadow:
+            0 0 12px rgba(168,85,247,0.9),
+            0 0 30px rgba(168,85,247,0.6);
+    }
+
+    100% {
+        text-shadow:
+            0 0 8px rgba(99,102,241,0.6),
+            0 0 20px rgba(99,102,241,0.4);
+    }
 }
 
 .controls {
@@ -106,6 +150,7 @@ body::after {
 }
 
 button {
+
     padding: 6px 14px;
 
     font-size: 0.8rem;
@@ -113,7 +158,7 @@ button {
     background: #6366F1;
 
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
 
     color: white;
 
@@ -126,9 +171,14 @@ button:hover {
     background: #4F46E5;
 }
 
-/* INPUT */
+/* =========================
+   INPUT
+========================= */
+
 .input-box {
+
     position: absolute;
+
     bottom: 20px;
     right: 20px;
 
@@ -136,29 +186,46 @@ button:hover {
 }
 
 #noteInput {
+
     padding: 12px 16px;
 
-    border-radius: 12px;
+    border-radius: 14px;
+
     border: 1px solid rgba(255,255,255,0.08);
 
     outline: none;
 
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.06);
 
     color: white;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 
     width: 260px;
+
+    transition: 0.3s;
+}
+
+#noteInput:focus {
+
+    border: 1px solid rgba(168,85,247,0.5);
+
+    box-shadow:
+        0 0 20px rgba(168,85,247,0.25);
 }
 
 #noteInput::placeholder {
     color: rgba(255,255,255,0.4);
 }
 
-/* NOTES */
+/* =========================
+   NOTES
+========================= */
+
 #notesContainer {
+
     position: absolute;
+
     bottom: 20px;
     left: 20px;
 
@@ -170,6 +237,7 @@ button:hover {
 }
 
 .note {
+
     padding: 10px 14px;
 
     background: rgba(99,102,241,0.18);
@@ -188,22 +256,39 @@ button:hover {
         0 0 15px rgba(99,102,241,0.25);
 
     animation: popIn 0.3s ease;
+
+    transition: 0.3s;
+}
+
+.note:hover {
+
+    transform: translateX(5px);
+
+    box-shadow:
+        0 0 25px rgba(168,85,247,0.4);
 }
 
 @keyframes popIn {
+
     from {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* SHOOTING STARS */
+/* =========================
+   SHOOTING STARS
+========================= */
+
 .shooting-stars {
+
     position: absolute;
+
     width: 100%;
     height: 100%;
 
@@ -213,6 +298,7 @@ button:hover {
 }
 
 .star {
+
     position: absolute;
 
     width: 1.5px;
@@ -236,24 +322,31 @@ button:hover {
 }
 
 .star:nth-child(1) {
+
     top: 20%;
     left: 10%;
+
     animation-delay: 0s;
 }
 
 .star:nth-child(2) {
+
     top: 40%;
     left: 20%;
+
     animation-delay: 2s;
 }
 
 .star:nth-child(3) {
+
     top: 60%;
     left: 15%;
+
     animation-delay: 4s;
 }
 
 @keyframes shoot {
+
     0% {
         transform: translate(0,0) rotate(135deg);
         opacity: 0;
@@ -269,8 +362,12 @@ button:hover {
     }
 }
 
-/* GALAXY */
+/* =========================
+   GALAXY
+========================= */
+
 .galaxy {
+
     position: absolute;
 
     bottom: 200px;
@@ -302,6 +399,7 @@ button:hover {
 }
 
 @keyframes galaxyRotate {
+
     from {
         transform: rotate(0deg);
     }
@@ -311,15 +409,22 @@ button:hover {
     }
 }
 
-/* PI BUTTON */
+/* =========================
+   PI BUTTON
+========================= */
+
+/* =========================
+   PI BUTTON
+========================= */
+
 .pi-button {
     position: fixed;
 
     left: 30px;
     top: 50%;
 
-    width: 58px;
-    height: 58px;
+    width: 60px;
+    height: 60px;
 
     border-radius: 50%;
 
@@ -327,19 +432,19 @@ button:hover {
     justify-content: center;
     align-items: center;
 
-    background: rgba(99,102,241,0.15);
+    background: rgba(99,102,241,0.14);
 
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.08);
 
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
 
     cursor: pointer;
 
     backdrop-filter: blur(10px);
 
     box-shadow:
-        0 0 20px rgba(99,102,241,0.35);
+        0 0 25px rgba(99,102,241,0.35);
 
     transition: 0.3s;
 
@@ -347,37 +452,46 @@ button:hover {
 }
 
 .pi-button:hover {
-    transform: scale(1.08);
+
+    transform: scale(1.1);
 
     box-shadow:
-        0 0 30px rgba(168,85,247,0.45);
+        0 0 40px rgba(168,85,247,0.55);
 }
 
-/* PI MODAL */
+/* =========================
+   MODAL
+========================= */
+
 .pi-modal {
     position: fixed;
     inset: 0;
-
-    background: rgba(0,0,0,0.75);
 
     display: none;
 
     justify-content: center;
     align-items: center;
 
+    background: rgba(0,0,0,0.82);
+
     z-index: 999999;
 }
 
-/* PI CONTENT */
+/* =========================
+   CONTENT
+========================= */
+
 .pi-content {
-    width: 75%;
-    max-width: 850px;
-
-    padding: 50px;
-
-    border-radius: 24px;
-
     position: relative;
+
+    width: 78%;
+    max-width: 950px;
+
+    padding: 60px;
+
+    border-radius: 30px;
+
+    overflow: hidden;
 
     background:
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
@@ -390,20 +504,17 @@ button:hover {
 
     backdrop-filter: blur(20px);
 
-    overflow: hidden;
-
-    color: white;
-
     box-shadow:
-        0 0 50px rgba(0,0,0,0.5);
+        0 0 80px rgba(0,0,0,0.8);
 
-    animation: fadePi 0.4s ease;
+    animation: piOpen 0.4s ease;
 }
 
-@keyframes fadePi {
+@keyframes piOpen {
+
     from {
         opacity: 0;
-        transform: scale(0.96);
+        transform: scale(0.95);
     }
 
     to {
@@ -412,7 +523,115 @@ button:hover {
     }
 }
 
-/* CLOSE BUTTON */
+/* FLOATING GLOWS */
+
+.pi-content::before {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    top: -120px;
+    right: -120px;
+
+    background:
+        radial-gradient(circle,
+        rgba(168,85,247,0.16),
+        transparent 70%);
+
+    filter: blur(50px);
+
+    animation: float1 10s ease-in-out infinite;
+}
+
+.pi-content::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    bottom: -100px;
+    left: -100px;
+
+    background:
+        radial-gradient(circle,
+        rgba(99,102,241,0.14),
+        transparent 70%);
+
+    filter: blur(50px);
+
+    animation: float2 12s ease-in-out infinite;
+}
+
+@keyframes float1 {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes float2 {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pi-header {
+    text-align: center;
+}
+
+.pi-subtitle {
+    letter-spacing: 6px;
+
+    font-size: 0.7rem;
+
+    color: rgba(255,255,255,0.45);
+
+    margin-bottom: 10px;
+}
+
+.pi-title {
+    font-size: 3.5rem;
+
+    font-weight: 200;
+
+    color: white;
+
+    letter-spacing: 8px;
+
+    text-shadow:
+        0 0 30px rgba(168,85,247,0.25);
+}
+
+/* =========================
+   CLOSE
+========================= */
+
 .close-btn {
     position: absolute;
 
@@ -421,9 +640,9 @@ button:hover {
 
     font-size: 1.5rem;
 
-    cursor: pointer;
-
     color: rgba(255,255,255,0.7);
+
+    cursor: pointer;
 
     transition: 0.3s;
 }
@@ -432,27 +651,112 @@ button:hover {
     color: white;
 }
 
-/* PI CIRCLE */
+/* =========================
+   PI ORBIT SYSTEM
+========================= */
+
 .pi-circle {
     position: relative;
 
-    width: 220px;
-    height: 220px;
+    width: 260px;
+    height: 260px;
 
-    margin: 20px auto 40px auto;
+    margin: 50px auto;
 
     border-radius: 50%;
 
-    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CENTER CORE */
+
+.pi-core {
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    animation: rotatePi 30s linear infinite;
+    font-size: 4rem;
+
+    color: white;
+
+    background:
+        radial-gradient(circle,
+        rgba(255,255,255,0.12),
+        rgba(168,85,247,0.08),
+        transparent 75%);
+
+    box-shadow:
+        0 0 40px rgba(168,85,247,0.25);
+
+    text-shadow:
+        0 0 25px rgba(255,255,255,0.3);
 }
 
-@keyframes rotatePi {
+/* ORBIT */
+
+.orbit {
+    position: absolute;
+
+    border-radius: 50%;
+
+    animation: orbitRotate linear infinite;
+}
+
+/* ORBS */
+
+.orb {
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    top: -6px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: white;
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,0.9);
+}
+
+/* COLORS */
+
+.orb.purple {
+    background: #a855f7;
+
+    box-shadow:
+        0 0 25px rgba(168,85,247,0.9);
+}
+
+.orb.blue {
+    background: #60a5fa;
+
+    box-shadow:
+        0 0 25px rgba(96,165,250,0.9);
+}
+
+.orb.small {
+    width: 8px;
+    height: 8px;
+}
+
+/* ROTATION */
+
+@keyframes orbitRotate {
+
     from {
         transform: rotate(0deg);
     }
@@ -462,79 +766,201 @@ button:hover {
     }
 }
 
-/* CENTER PI */
-.pi-circle::before {
-    content: "π";
+/* =========================
+   DIGITS BOX
+========================= */
 
-    position: absolute;
+.pi-digits-box {
+    max-height: 180px;
 
-    font-size: 4rem;
-    font-weight: 200;
+    overflow-y: auto;
 
-    color: rgba(255,255,255,0.9);
+    padding: 22px;
 
-    text-shadow:
-        0 0 20px rgba(255,255,255,0.2);
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.03);
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(10px);
 }
 
-/* OUTER RING */
-.pi-circle::after {
-    content: "";
+/* SCROLLBAR */
 
-    position: absolute;
-
-    width: 260px;
-    height: 260px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(168,85,247,0.12);
+.pi-digits-box::-webkit-scrollbar {
+    width: 8px;
 }
 
-/* ORBIT DOT */
-.pi-dot {
-    position: absolute;
+.pi-digits-box::-webkit-scrollbar-thumb {
+    background: rgba(168,85,247,0.5);
 
-    width: 10px;
-    height: 10px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    top: -5px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    box-shadow:
-        0 0 15px rgba(255,255,255,0.8);
+    border-radius: 20px;
 }
 
-/* PI TEXT */
+/* TEXT */
+
 .pi-text {
     text-align: center;
 
-    line-height: 2.2;
+    line-height: 2.4;
 
     letter-spacing: 3px;
 
     font-size: 0.95rem;
 
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.78);
 
     font-family: monospace;
-
-    margin-top: 20px;
 }
 
-/* PREVENT CLICK BLOCKING */
-.galaxy,
-.galaxy::before,
-.galaxy::after,
-.shooting-stars,
-.star,
-body::before,
-body::after {
-    pointer-events: none !important;
+/* COORDINATES */
+
+.pi-coordinates-left {
+    position: absolute;
+
+    bottom: 20px;
+    left: 25px;
+
+    font-size: 0.7rem;
+
+    color: rgba(255,255,255,0.3);
+
+    letter-spacing: 2px;
+}
+
+.pi-coordinates-right {
+    position: absolute;
+
+    top: 20px;
+    left: 25px;
+
+    font-size: 0.7rem;
+
+    color: rgba(255,255,255,0.3);
+
+    letter-spacing: 2px;
+}
+
+/* PERFECT ORBIT ALIGNMENT */
+
+.orbit {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.03);
+
+    animation: orbitRotate linear infinite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes orbitRotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+/* CLEAN ORB POSITIONING */
+
+.orb {
+    position: absolute;
+
+    top: -6px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px currentColor;
+}
+
+/* =========================
+   FORM BUTTON
+========================= */
+
+.pi-controls {
+
+    position: absolute;
+
+    top: 25px;
+    right: 80px;
+
+    z-index: 999999;
+
+    pointer-events: auto;
+}
+
+#formCircleBtn {
+
+    padding: 10px 24px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99,102,241,0.85),
+            rgba(168,85,247,0.85)
+        );
+
+    backdrop-filter: blur(12px);
+
+    color: white;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 0 20px rgba(168,85,247,0.35);
+
+    z-index: 999999;
+
+    position: relative;
+
+    pointer-events: auto;
+}
+
+#formCircleBtn:hover {
+
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 35px rgba(168,85,247,0.55);
+}
+
+.pi-content,
+.pi-controls,
+#formCircleBtn,
+.close-btn {
+    pointer-events: auto;
+    z-index: 999999;
 }
