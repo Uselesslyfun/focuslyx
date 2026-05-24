@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="script.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Logo -->
@@ -17,34 +18,52 @@
 
     <!-- Timer -->
     <div class="top-right">
-        <p class="subtitle">Focus session in progress</p>
 
-        <div class="timer" id="timer">00:00</div>
+        <p class="subtitle">
+            Focus session in progress
+        </p>
+
+        <div class="timer" id="timer">
+            00:00
+        </div>
 
         <div class="controls">
-            <button onclick="togglePause()" id="pauseBtn">Pause</button>
+            <button onclick="togglePause()" id="pauseBtn">
+                Pause
+            </button>
         </div>
+
     </div>
 
-    <!-- Input (bottom right) -->
+    <!-- Input -->
     <div class="input-box">
-        <input type="text" id="noteInput" placeholder="Type and press Enter..." />
+        <input
+            type="text"
+            id="noteInput"
+            placeholder="Type and press Enter..."
+        />
     </div>
 
-    <!-- Notes (bottom left) -->
+    <!-- Notes -->
     <div id="notesContainer"></div>
 
-    <script src="script.js"></script>
-	
-	<div class="shooting-stars">
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-</div>
+    <!-- Shooting Stars -->
+    <div class="shooting-stars">
 
-<div class="galaxy"></div>
-	
-	<!-- PI BUTTON -->
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+
+    </div>
+
+    <!-- Galaxy -->
+    <div class="galaxy"></div>
+
+    <!-- =========================
+     PI SECTION (REPLACE OLD PI MODAL SECTION)
+========================= -->
+
+<!-- PI BUTTON -->
 <div class="pi-button" id="piButton">
     π
 </div>
@@ -54,29 +73,74 @@
 
     <div class="pi-content">
 
+        <!-- CLOSE -->
         <div class="close-btn" id="closePi">
             ✕
         </div>
 
-        <<div class="pi-circle">
-    <div class="pi-dot"></div>
+        <!-- COORDINATES -->
+        <div class="pi-coordinates-right">
+            X: 3.14159
+        </div>
+
+        <div class="pi-coordinates-left">
+            Y: 2.71828
+        </div>
+
+        <!-- HEADER -->
+        <div class="pi-header">
+
+            <div class="pi-subtitle">
+                THE INFINITE CONSTANT
+            </div>
+
+            <div class="pi-title">
+                π
+            </div>
+
+        </div>
+
+        <!-- PI ORBIT SYSTEM -->
+        <div class="pi-circle" id="piCircle">
+
+            <div class="pi-core">
+                π
+            </div>
+			
+			<div class="pi-controls">
+    <button id="formCircleBtn">
+        FORM
+    </button>
 </div>
 
-        <h2>First 1000 Digits of π</h2>
+        </div>
 
-        <p class="pi-text">
+        <!-- DIGITS -->
+        <div class="pi-digits-box">
+
+            <p class="pi-text">
+
 3.1415926535 8979323846 2643383279 5028841971
 6939937510 5820974944 5923078164 0628620899
 8628034825 3421170679 8214808651 3282306647
-0938446095 5058223172 5359408128
-</p>
+0938446095 5058223172 5359408128 4811174502
+8410270193 8521105559 6446229489 5493038196
+4428810975 6659334461 2847564823 3786783165
+2712019091 4564856692 3460348610 4543266482
+
+            </p>
+			
+
+
+        </div>
 
     </div>
 
 </div>
 
-    </div>
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
 
-</div>
 </body>
+
 </html>
