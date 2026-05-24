@@ -51,3 +51,31 @@ document.addEventListener("mousemove", (e) => {
     glow.style.left = e.clientX + "px";
     glow.style.top = e.clientY + "px";
 });
+
+function openPi() {
+    document.getElementById("piModal").style.display = "flex";
+}
+
+function closePi() {
+    document.getElementById("piModal").style.display = "none";
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    const piButton = document.getElementById("piButton");
+    const piModal = document.getElementById("piModal");
+    const closePi = document.getElementById("closePi");
+
+    piButton.addEventListener("click", () => {
+
+        piModal.style.display = "flex";
+
+    });
+
+    closePi.addEventListener("click", () => {
+
+        piModal.style.display = "none";
+
+    });
+
+});
